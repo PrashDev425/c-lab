@@ -12,7 +12,28 @@ It has two main components:
 - **Base Case** → condition to stop recursion (avoids infinite loop).  
 - **Recursive Case** → the function calls itself with smaller input, reducing the problem until the base case is reached.  
 
----
+## What is a Call Stack?
+
+The call stack is a special memory structure used by programming languages to keep track of function calls during execution.
+
+Think of it like a stack of plates:
+
+- Push → Each time a function is called, it is pushed onto the stack.
+
+- Pop → When a function finishes execution, it is popped off the stack.
+
+- ``LIFO (Last In, First Out)`` → The last function called is the first one to finish.
+
+
+## Stack Overflow Error
+
+A stack overflow error occurs when the program runs out of stack memory.
+
+Causes:
+
+- Infinite or very deep recursion
+- Function calls without a proper base case
+- Excessive local variable usage in recursive call
 
 ## Key Points About Recursion
 
@@ -46,10 +67,9 @@ int factorial(int n) {
     return n * factorial(n - 1);
 }
 
-int main() {
+void main() {
     int num = 5;
     printf("Factorial of %d = %d\n", num, factorial(num));
-    return 0;
 }
 ```
 
@@ -75,4 +95,7 @@ The sum of an array can also be solved recursively:
 
 - Base Case → If array size is 0, return 0.  
 - Recursive Case → `sum(arr, n) = arr[n-1] + sum(arr, n-1)`
+
+
+
 ---
